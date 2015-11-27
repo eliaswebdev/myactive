@@ -1,0 +1,22 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password: root
+  host: 127.0.0.1
+  # socket: /tmp/mysql.sock
+
+development:
+  <<: *default
+  database: myactive_development
+
+test:
+  <<: *default
+  database: myactive_test
+
+production:
+  <<: *default
+  database: myactive_production
+  username: myactive
+  password: <%= ENV['MYACTIVE_DATABASE_PASSWORD'] %>
