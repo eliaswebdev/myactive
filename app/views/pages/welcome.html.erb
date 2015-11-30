@@ -1,1 +1,8 @@
 <h1>Seja bem-vindo</h1>
+
+<h4>Últimos artigos</h4>
+<ul>
+	<% @articles_published.each do |article| %>
+	<li><%= article.id %> | <%= article.title %> | <%= article.published_at %></li>
+	<% end %>
+</ul>

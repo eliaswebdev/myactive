@@ -1,0 +1,35 @@
+<h1>People</h1>
+
+<%= link_to 'Cadastrar', new_person_path %>
+
+<table width="100%" border="1"> 
+	<thead>
+		<tr>
+			<th>id</th>
+			<th>name</th>
+			<th>status</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @people.each do |person| %>
+		<tr>
+			<td><%= person.id %></td>
+			<td><%= person.name %></td>
+			<td><%= person.status %></td>
+			<td>
+				<%= link_to 'Show', person %>
+				<%= link_to 'Delete', 
+					person,
+					method: :delete,
+					data: {
+						confirm: 'Deseja mesmo apagar este registro?'
+					}
+				%>
+				<%= link_to 'Edit', edit_person_path(person.id) %>
+			</td>
+		</tr>
+		<% end %>
+	</tbody>
+
+</table>

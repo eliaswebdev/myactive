@@ -1,0 +1,13 @@
+<h1>Person</h1>
+
+<strong>name: </strong> <%= @person.name %> <br>
+<strong>cpf: </strong> <%= @person.cpf %> <br>
+<strong>email: </strong> <%= @person.email %> <br>
+<strong>birth_date: </strong> <%= @person.birth_date %> <br>
+<strong>occupation: </strong> <%= @person.occupation %> <br>
+<strong>created_at: </strong> <%= @person.created_at %> <br>
+<strong>updated_at: </strong> <%= @person.updated_at %> <br>
+<strong>status: </strong> <%= @person.status %> <br>
+
+<%= link_to 'Edit', edit_person_path(@person) %>
+<%= link_to 'Voltar', people_path %>
