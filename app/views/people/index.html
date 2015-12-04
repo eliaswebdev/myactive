@@ -1,8 +1,11 @@
-<h1>People</h1>
+<!-- start -->
+<div class="page-header">
+	<%= link_to 'Cadastrar', new_person_path, class: 'btn btn-primary pull-right' %>
+	<h1>People</h1>
+</div>
 
-<%= link_to 'Cadastrar', new_person_path %>
 
-<table width="100%" border="1"> 
+<table class="table table-striped table-bordered table-hover"> 
 	<thead>
 		<tr>
 			<th>id</th>
@@ -14,22 +17,24 @@
 	<tbody>
 		<% @people.each do |person| %>
 		<tr>
-			<td><%= person.id %></td>
+			<td width="10"><%= person.id %></td>
 			<td><%= person.name %></td>
 			<td><%= person.status %></td>
-			<td>
-				<%= link_to 'Show', person %>
+			<td width="150">
+				<%= link_to 'Show', person, class: 'btn btn-success btn-xs' %>
 				<%= link_to 'Delete', 
 					person,
 					method: :delete,
 					data: {
 						confirm: 'Deseja mesmo apagar este registro?'
-					}
+					}, 
+					class: 'btn btn-danger btn-xs'
 				%>
-				<%= link_to 'Edit', edit_person_path(person.id) %>
+				<%= link_to 'Edit', edit_person_path(person.id), class: 'btn btn-primary btn-xs' %>
 			</td>
 		</tr>
 		<% end %>
 	</tbody>
 
 </table>
+<!-- end -->
